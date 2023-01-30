@@ -24,7 +24,7 @@ public class BashPerformer implements Directive {
     public CodeChunk provideCode(String invocationBody) throws IllegalAccessException {
         final String code = "#!/bin/python3\n" +
         "import subprocess\n" +
-        "subprocess.check_call(" + invocationBody + ", shell=True)";
+        "subprocess.check_call(\"" + invocationBody + "\", shell=True)";
         return CodeChunk.of(0, getDirectiveName(), CodeLanguage.PYTHON_3, code, "UTF-8");
     }
 }
